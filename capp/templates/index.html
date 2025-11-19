@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Gourmet Cooking School</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/static/css/reset.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/static/css/grid.css" type="text/css" media="screen">
+  <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/static/css/flexslider.css" type="text/css" media="screen">
+  <script src="/static/js/jquery-1.7.1.min.js"></script>
+  <script src="/static/js/superfish.js"></script>
+  <script src="/static/js/jquery.flexslider-min.js"></script>
+  <script>
+    jQuery(window).load(function () {
+      jQuery('.flexslider').flexslider({
+        animation: "fade",
+        slideshow: true,
+        slideshowSpeed: 7000,
+        animationDuration: 600,
+        prevText: "",
+        nextText: "",
+        controlNav: false
+      })
+    });
+  </script>
+  <!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<link rel="stylesheet" href="css/ie.css"> 
+<link href="http://fonts.googleapis.com/css?family=PT+Serif+Caption:400italic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Serif+Caption:400" rel="stylesheet" type="text/css">
+<![endif]-->
+</head>
+
+<body>
+  <header>
+    <div class="line-top"></div>
+    <div class="main">
+      <div class="row-top">
+        <h1><a href="index.html"><img alt="" src="/static/images/logo.png"></a></h1>
+        <nav>
+          <ul class="sf-menu">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/courses">Courses </a> </li>
+            <li><a href="/recipes">Recipes</a>
+              <ul>
+                <li><a href="/vegan">Vegan</a></li>
+                <li><a href="/grill">Grill</a>
+                <li><a href="/desert">Desert</a></li>
+                <li><a href="/receipeoth">Other Receipes</a></li>
+              </ul>
+            </li>
+            <li><a href="/chefs">About</a> </li>
+            <li><a href="/mycontact">Contacts</a> </li>
+            {% if user is none %}
+            <li><a href="/login">Login</a> </li>
+            <li><a href="/usignup">signup</a> </li>
+            <li><a href="/adminapp/admin_login/">admin</a> </li>
+            {% else %}
+            <li><a href="#">{{user}}</a>
+              <ul>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/note">Receipe-Submit</a></li>
+                <li><a href="/userlogout">Logout</a>
+              </ul>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="box-slider">
+      <div class="flexslider">
+        <ul class="slides">
+          <li> <img alt="" src="/static/images/slide-1.jpg" , height="400" , width="950"></li>
+          <li> <img alt="" src="/static/images/slide-2.jpg"></li>
+        </ul>
+      </div>
+    </div>
+    <div class="box-slogan">
+      <h3>Welcome to Gourmet cooking school!</h3>
+      <p>"Cooking is not just about ingredients and recipes—it's about passion, creativity,every mistake is a lesson, every dish a chance to create & Sharing a joy."</p>
+    </div>
+  </header>
+  <section id="content">
+    <div class="border-horiz"></div>
+    <div class="container_12 row-1">
+      <article class="grid_4 thumbnail-1">
+        <h3><span>Vegan</span> cookings </h3>
+        <figure class="box-img"><img src="/static/images/page1-img1.jpg" height="190" width="280" alt=""></figure>
+        <p>"Vegan recipes for beginners make eating plant-based healthy, delicious, and easy. Thinking about a vegan
+          diet? These recipes are perfect when you’re first taking on a plant-based diet!"</p>
+        <a href="/vegan" class="btn">View More</a>
+      </article>
+      <article class="grid_4 thumbnail-1">
+        <h3><span>grill</span> cookings </h3>
+        <figure class="box-img"><img src="/static/images/page1-img2.jpg" height="190" width="280" alt=""></figure>
+        <p>"Ready to spice up your grill? Here are some of the Best Indian Grill Recipes that will up your barbecue game.
+          Smoky paneer tikka, these Indian bbq recipes offer a delightful array of
+          vegetarian."</p>
+        <a href="/grill" class="btn">View More</a>
+      </article>
+      <article class="grid_4 thumbnail-1">
+        <h3><span>dessert</span> cookings </h3>
+        <figure class="box-img"><img src="/static/images/page1-img3.jpg" height="190" width="280" alt=""></figure>
+        <p>"Explore the rich and flavorful world of desert cooking like browny,hot cake—where resourcefulness meets
+          tradition, learn to craft hearty, soulful meals born from the spices."</p>
+        <a href="/desert" class="btn">View More</a>
+      </article>
+      <div class="clear"></div>
+    </div>
+    <div class="border-horiz"></div>
+    <div class="container_12">
+
+      <article class="grid_8">
+        <h3>Inspiration</h3>
+        <blockquote class="quote-1">“Cooking is all about people. Food is maybe the only universal thing that really has
+          the power to bring everyone together. No matter what culture, everywhere around the world, people get together
+          to eat.”</blockquote>
+        <div class="name-author">– Tarla Dalal</div>
+
+      </article>
+      <div class="clear"></div>
+    </div>
+  </section>
+  <footer>
+    <div class="main">
+      
+      <div class="policy">Design by: <a href="#">Hardik savani</a> </div>
+      <div class="clear"></div>
+    </div>
+  </footer>
+</body>
+
+</html>

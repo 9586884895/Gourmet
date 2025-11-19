@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Report</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-orange-100 via-yellow-100 to-pink-100 min-h-screen p-6">
+  <div class="max-w-7xl mx-auto bg-white shadow-xl rounded-lg p-8">
+    <h1 class="text-3xl font-bold text-center text-orange-600 mb-6"> Receipe Shared By People</h1>
+    <div class="overflow-x-auto">
+      <table class="min-w-full border border-gray-300 rounded-lg">
+        <thead class="bg-orange-200 text-gray-700">
+          <tr>
+            <th class="px-4 py-2 text-left">Submit At</th>
+            <th class="px-4 py-2 text-left">Title</th>
+            <th class="px-4 py-2 text-left">Ingredients</th>
+            <th class="px-4 py-2 text-left">Instructions</th>
+            <th class="px-4 py-2 text-left">File</th>
+            <th class="px-4 py-2 text-left">Submit By</th>
+            <th class="px-4 py-2 text-left">Email</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+        {% for i in ndata %}
+          <tr class="hover:bg-orange-50">
+            <td class="px-4 py-2">{{i.submit_at}}</td>
+            <td class="px-4 py-2">{{i.title}}</td>
+            <td class="px-4 py-2">{{i.ingredient}}</td>
+            <td class="px-4 py-2">{{i.instruction}}</td>
+            <td class="px-4 py-2"><a href="{{i.file.url}}" class="text-blue-600 underline">Receipe file</a></td>
+            <td class="px-4 py-2">{{i.submit_by}}</td>
+            <td class="px-4 py-2">{{i.email}}</td>
+          </tr>
+          {% endfor %}
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

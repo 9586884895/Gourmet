@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Gourmet Cooking School | Contacts</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/static/css/reset.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/static/css/grid.css" type="text/css" media="screen">
+  <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400italic" rel="stylesheet" type="text/css">
+  <script src="/static/js/jquery-1.7.1.min.js"></script>
+  <script src="/static/js/superfish.js"></script>
+  <script src="/static/js/forms.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<link rel="stylesheet" href="css/ie.css"> 
+<link href="http://fonts.googleapis.com/css?family=PT+Serif+Caption:400italic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Serif+Caption:400" rel="stylesheet" type="text/css">
+<![endif]-->
+</head>
+
+<body>
+  <header>
+    <div class="line-top"></div>
+    <div class="main">
+      <div class="row-top">
+        <h1><a href="index.html"><img alt="" src="/static/images/logo.png"></a></h1>
+        <nav>
+          <ul class="sf-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/courses">Courses</a> </li>
+            <li><a href="/recipes">Recipes</a>
+              <ul>
+                <li><a href="/vegan">Vegan</a></li>
+                <li><a href="/grill">Grill</a>
+                <li><a href="/desert">Desert</a></li>
+                <li><a href="/receipeoth">Other Receipes</a></li>
+              </ul>
+            </li>
+            <li><a href="/chefs">About</a> </li>
+            <li class="active"><a href="/mycontact">Contacts</a> </li>
+            {% if user is none %}
+            <li><a href="/login">Login</a> </li>
+            <li><a href="/usignup">signup</a> </li>
+            {% else %}
+            <li><a href="#">{{user}}</a>
+              <ul>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/note">Receipe-Submit</a></li>
+                <li><a href="/userlogout">Logout</a>
+              </ul>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </header>
+  <section id="content">
+    <div class="border-horiz"></div>
+    <div class="main">
+      <h3>Contact Information</h3>
+      <div class="box-address">
+        <h4>Gourmet cooking class</h4>
+        <dl class="address">
+          <dt>A-709, Wings Business Bay<br>
+            150 feet Ring road,<br>
+            Near Fortune hotel, Rajkot</dt>
+          <dd> <span>Office-1:</span> +919586884895</dd>
+          <dd> <span>Office-2:</span> +918320630196</dd>
+          <dd> E-mail: <a class="mail-1" href="#">gourmetcooking53@gmail.com</a> </dd>
+        </dl>
+      </div>
+      <div class="map box-img">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3692.523504497279!2d70.78559957506806!3d22.258150879716876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959cb051b864ceb%3A0x24767fbaabd6987e!2sWings%20Business%20Bay!5e0!3m2!1sen!2sin!4v1762768359720!5m2!1sen!2sin"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="contacts" height="600" width="300">
+      <form method="post" class="bg-white shadow-lg rounded-lg p-6 space-y-4">
+        {% csrf_token %}
+        <h2 class="text-2xl font-semibold text-orange-600 mb-4">Send Us a Message</h2>
+        <input type="text" name="fullname" placeholder="Fullname"
+          class="w-full border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+          required /><br>
+        <input type="number" name="mobile" placeholder="Mobile"
+          class="w-full border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+          required />
+        <input type="email" name="email" placeholder="Email"
+          class="w-full border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+          required />
+        <textarea name="msg" placeholder="Message"
+          class="w-full border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
+          required></textarea>
+        <input type="submit" name="Send">
+      </form>
+    </div>
+
+
+
+
+
+  </section>
+  <footer>
+    <div class="main">
+      
+      <div class="policy">Design by: <a href="#">Hardik savani</a> </div>
+      <div class="clear"></div>
+    </div>
+  </footer>
+  <script>
+    var url = 'https://wati-integration-prod-service.clare.ai/v2/watiWidget.js?41986';
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url;
+    var options = {
+      "enabled": true,
+      "chatButtonSetting": {
+        "backgroundColor": "#00e785",
+        "ctaText": "Chat with us",
+        "borderRadius": "25",
+        "marginLeft": "0",
+        "marginRight": "20",
+        "marginBottom": "20",
+        "ctaIconWATI": false,
+        "position": "right"
+      },
+      "brandSetting": {
+        "brandName": "Wati",
+        "brandSubTitle": "undefined",
+        "brandImg": "https://www.wati.io/wp-content/uploads/2023/04/Wati-logo.svg",
+        "welcomeText": "Hi there!\nHow can I help you?",
+        "messageText": "Hello, %0A I have a question about {{page_link}}",
+        "backgroundColor": "#00e785",
+        "ctaText": "Chat with us",
+        "borderRadius": "25",
+        "autoShow": true,
+        "phoneNumber": "9586884895"
+      }
+    };
+    s.onload = function () {
+      CreateWhatsappChatWidget(options);
+    };
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+  </script>
+</body>
+
+</html>

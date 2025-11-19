@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Gourmet Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-cover bg-center bg-no-repeat min-h-screen" style="background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092');">
+  <div class="min-h-screen bg-black bg-opacity-60 flex flex-col md:flex-row">
+    <!-- Sidebar -->
+    <aside class="w-full md:w-64 bg-white bg-opacity-90 p-6">
+      <h2 class="text-2xl font-bold text-amber-700 mb-6">Gourmet Admin Panel</h2>
+      <nav class="space-y-4">
+        <a href="#" class="block text-gray-700 hover:text-amber-600 font-medium">Dashboard</a>
+        <a href="/adminapp/admin_students/" class="block text-gray-700 hover:text-amber-600 font-medium">Students</a>
+        <a href="/adminapp/admin_contacts/" class="block text-gray-700 hover:text-amber-600 font-medium">Contacts</a> 
+        <a href="/adminapp/admin_receipes/" class="block text-gray-700 hover:text-amber-600 font-medium">Receipes</a>       
+        <a href="/adminapp/admin_logout/" class="block text-red-600 hover:text-red-800 font-medium">Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 text-white">
+      <h1 class="text-3xl font-bold mb-4">Bounjur, Admin 👨‍🍳</h1>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="bg-white bg-opacity-80 p-4 square-lg shadow-md text-black">
+          <h3 class="text-xl font-semibold mb-2">Total enrolled Students</h3>
+          <p class="text-3xl font-bold text-amber-600">{{s}}</p>
+        </div>
+        <div class="bg-white bg-opacity-80 p-4 square-lg shadow-md text-black">
+          <h3 class="text-xl font-semibold mb-2">Active Register</h3>
+          <p class="text-3xl font-bold text-amber-600">{{u}}</p>  
+        </div>
+        <div class="bg-white bg-opacity-80 p-4 square-lg shadow-md text-black">
+          <h3 class="text-xl font-semibold mb-2">Contacts</h3>
+          <p class="text-3xl font-bold text-amber-600">{{c}}</p>
+        </div>
+        <div class="bg-white bg-opacity-80 p-4 square-lg shadow-md text-black">
+          <h3 class="text-xl font-semibold mb-2">Receipes</h3>
+          <p class="text-3xl font-bold text-amber-600">{{r}}</p>
+        </div>
+      </div>
+
+      <section class="mt-8">
+        <h2 class="text-2xl font-semibold mb-4">Active Registers</h2>
+        <div class="bg-white p-6 shadow overflow-x-auto">                
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b">
+                            <th class="py-2 px-4 text-gray-600">ID</th>
+                            <th class="py-2 px-4 text-gray-600">Full Name</th>
+                            <th class="py-2 px-4 text-gray-600">Email</th>
+                            <th class="py-2 px-4 text-gray-600">Mobile</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in usdata %}
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-2 px-4 text-black">{{i.id}}</td>
+                            <td class="py-2 px-4 text-black">{{i.fullname}}</td>
+                            <td class="py-2 px-4 text-black">{{i.email}}</td>
+                            <td class="py-2 px-4 text-black">{{i.mobile}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+          </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

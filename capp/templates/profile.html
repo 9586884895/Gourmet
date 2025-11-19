@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up | Cooking Class</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-orange-50 min-h-screen flex items-center justify-center">
+
+  <div class="w-full max-w-md bg-white shadow-xl rounded-lg p-8">
+    <div class="text-center mb-6">
+      <h1 class="text-3xl font-bold text-orange-600">Update-profile</h1>
+      <p class="text-gray-600">Update your account</p>
+    </div>
+
+    <form method="POST" class="space-y-5">
+      {% csrf_token %}
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+        <input type="text" id="name" value="{{em.fullname}}" name="fullname" required
+          class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500" />
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
+        <input type="email" id="email" value="{{em.email}}" name="email" required
+          class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500" />
+      </div>
+
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <input type="password" id="password" value="{{em.password}}" name="password" required
+          class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500" />
+      </div>
+
+      <div>
+        <label for="Mobile-Number" class="block text-sm font-medium text-gray-700">Mobile</label>
+        <input type="number" id="number" value="{{em.mobile}}" name="mobile" required
+          class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500" />
+      </div>
+
+      <button type="submit"
+        class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300">
+        Update-Profile
+      </button>
+    </form>    
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Information</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 py-10">
+  <div class="max-w-3xl mx-auto bg-white p-8 rounded shadow">
+    <h1 class="text-2xl font-bold mb-6 text-center text-blue-700">Student Information</h1>
+    <form class="space-y-6" method="POST">
+      {% csrf_token %}
+      <!-- Full Name -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Full Name</label>
+        <input type="text" class="mt-1 block w-full border border-gray-300 rounded px-3 py-2" name="fullname" required />
+      </div>
+
+      <!-- DOB -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Date of Birth</label>
+        <input type="date" class="mt-1 block w-full border border-gray-300 rounded px-3 py-2" name="DOB" required />
+      </div>
+
+      <!-- Gender -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Gender</label>
+        <select class="mt-1 block w-full border border-gray-300 rounded px-3 py-2" name="gender" required>
+          <option value="">Select</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" class="mt-1 block w-full border border-gray-300 rounded px-3 py-2" name="email" required />
+      </div>
+
+      <!-- Mobile Number -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Mobile Number</label>
+        <input type="tel" class="mt-1 block w-full border border-gray-300 rounded px-3 py-2" name="mobile" required />
+      </div>
+
+      <!-- Address -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Address</label>
+        <textarea class="mt-1 block w-full border border-gray-300 rounded px-3 py-2" rows="3" name="address" required></textarea>
+      </div>
+
+      <!-- Course Selection -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Course Selection</label>
+        <select class="mt-1 block w-full border border-gray-300 rounded px-3 py-2" name="course" required>
+          <option value="">Select a course</option>
+          <option>Vegan Cooking</option>
+          <option>Grill Cooking</option>
+          <option>Desert Cooking</option>
+        </select>
+      </div>
+
+      <!-- Time Slot -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Preferred Time Slot</label>
+        <select class="mt-1 block w-full border border-gray-300 rounded px-3 py-2" name="timeslot" required>
+          <option value="">Select a time</option>
+          <option>Morning (9 AM - 12 PM)</option>
+          <option>Afternoon (1 PM - 4 PM)</option>
+          <option>Evening (6 PM - 9 PM)</option>
+        </select>
+      </div>
+
+      <!-- Declaration -->
+      <div class="flex items-start">
+        <input type="checkbox" class="mt-1 mr-2" required />
+        <label class="text-sm text-gray-700">I hereby declare that the information provided is true and correct.</label>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

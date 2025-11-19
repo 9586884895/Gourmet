@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Gourmet Cooking School | About</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/static/css/reset.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/static/css/grid.css" type="text/css" media="screen">
+  <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400italic" rel="stylesheet" type="text/css">
+  <script src="/static/js/jquery-1.7.1.min.js"></script>
+  <script src="/static/js/superfish.js"></script>
+  <!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<link rel="stylesheet" href="css/ie.css"> 
+<link href="http://fonts.googleapis.com/css?family=PT+Serif+Caption:400italic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Serif+Caption:400" rel="stylesheet" type="text/css">
+<![endif]-->
+</head>
+
+<body>
+  <header>
+    <div class="line-top"></div>
+    <div class="main">
+      <div class="row-top">
+        <h1><a href="index.html"><img alt="" src="/static/images/logo.png"></a></h1>
+        <nav>
+          <ul class="sf-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/courses">Courses</a> </li>
+            <li><a href="/recipes">Recipes</a>
+              <ul>
+                <li><a href="/vegan">Vegan</a></li>
+                <li><a href="/grill">Grill</a>
+                <li><a href="/desert">Desert</a></li>
+                <li><a href="/receipeoth">Other Receipes</a></li>
+              </ul>
+            </li>            
+            <li class="active"><a href="/chefs">About</a> </li>
+            <li><a href="/mycontact">Contacts</a> </li>
+            {% if user is none %}
+            <li><a href="/login">Login</a> </li>
+            <li><a href="/usignup">signup</a> </li>
+            {% else %}
+            <li><a href="#">{{user}}</a>
+              <ul>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/note">Receipe-Submit</a></li>
+                <li><a href="/userlogout">Logout</a>
+              </ul>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </header>
+  <section id="content">
+    <div class="border-horiz"></div>
+    <div class="container_12">
+      <article class="side-bar extra1">
+        <h3><span>aBOUT</span>oUR sCHOOL</h3>
+        <figure class="box-img img-indent1"><img src="/static/images/page5-img1.jpg" alt=""></figure>
+        <div class="inner-1"> <a href="#" class="link-1">Where Passion Meets Speciality </a>
+          <p>Welcome to Gourmet Cooking Class,where passion meets the plate! We’re a community of food lovers, home
+            chefs, and curious beginners who believe that cooking should be joyful, nourishing, and accessible to
+            everyone.</p>
+          <p>Founded on the belief that great meals start with fresh ingredients and a dash of creativity, our classes
+            are designed to inspire confidence in the kitchen. Whether you're learning to sauté your first vegetables or
+            mastering the art of sourdough, our expert instructors guide you every step of the way — with warmth,
+            patience, and plenty of tasting along the journey.</p>
+
+        </div>
+      </article>
+      <article class="grid_8">
+        <h3>Our Chefs</h3>
+        <ul class="list-recipes extra">
+          <li>
+            <figure class="box-img"><img src="/static/images/page5-img4.jpg" alt=""></figure>
+            <div class="overflow">
+              <h4>Ekta D'Souza</h4>
+              <p>Ekta brings a rich blend of culinary expertise and teaching passion to our kitchen. With 10 years of
+                experience in Vegan Foods, they’ve worked in UK and are known for their Dishes.                
+              </p>              
+            </div>
+            <div class="clear"></div>
+          </li>
+          <li>
+            <figure class="box-img"><img src="/static/images/page5-img3.jpg" alt=""></figure>
+            <div class="overflow">
+              <h4>Sam Raj Pitroda</h4>
+              <p>Sam raj brings a rich blend of culinary expertise and teaching passion to our kitchen. With 20+ years of
+                experience in Indian Regional Foods, they’ve worked in Farmlore(Banglore) and are known for their Foods Variety.</p>
+            </div>
+            <div class="clear"></div>
+          </li>
+          <li>
+            <figure class="box-img"><img src="/static/images/page5-img2.jpg" alt=""></figure>
+            <div class="overflow">
+              <h4>Youkesh Saili</h4>
+              <p>Youkesh Saili brings a rich blend of culinary expertise and teaching passion to our kitchen. With 15+ years of
+                experience in Indian Regional Foods, they’ve worked in different countries & Restaurant also known for their Foods Variety.</p>              
+            </div>
+            <div class="clear"></div>
+          </li>
+        </ul>
+      </article>
+      <div class="clear"></div>
+    </div>
+  </section>
+  <footer>
+    <div class="main">
+      
+      <div class="policy">Design by: <a href="#">Hardik savani</a> </div>
+      <div class="clear"></div>
+    </div>
+  </footer>
+</body>
+
+</html>

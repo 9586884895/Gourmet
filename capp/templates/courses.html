@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Gourmet Cooking School | Courses</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/static/css/reset.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/static/css/grid.css" type="text/css" media="screen">
+  <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400italic" rel="stylesheet" type="text/css">
+  <script src="/static/js/jquery-1.7.1.min.js"></script>
+  <script src="/static/js/superfish.js"></script>
+  <!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<link rel="stylesheet" href="css/ie.css"> 
+<link href="http://fonts.googleapis.com/css?family=PT+Serif+Caption:400italic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Serif+Caption:400" rel="stylesheet" type="text/css">
+<![endif]-->
+</head>
+
+<body>
+  <header>
+    <div class="line-top"></div>
+    <div class="main">
+      <div class="row-top">
+        <h1><a href="index.html"><img alt="" src="/static/images/logo.png"></a></h1>
+        <nav>
+          <ul class="sf-menu">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/courses">Courses</a> </li>
+            <li><a href="/recipes">Recipes</a>
+              <ul>
+                <li><a href="/vegan">Vegan</a></li>
+                <li><a href="/grill">Grill</a>
+                <li><a href="/desert">Desert</a></li>
+                <li><a href="/receipeoth">Other Receipes</a></li>
+              </ul>
+            </li>
+            <li><a href="/chefs">About</a> </li>
+            <li><a href="/mycontact">Contacts</a> </li>
+            {% if user is none %}
+            <li><a href="/login">Login</a> </li>
+            <li><a href="/usignup">signup</a> </li>
+            {% else %}
+            <li><a href="#">{{user}}</a>
+              <ul>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/note">Receipe-Submit</a></li>
+                <li><a href="/userlogout">Logout</a>
+              </ul>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </header>
+  <section id="content">
+    <div class="border-horiz"></div>
+    <div class="container_12">
+      <article class="side-bar">
+        <h3><span>Main</span>Courses</h3>
+        <p>Main course cooking classes focus on preparing hearty, satisfying dishes that form the centerpiece of a meal.
+          These classes are ideal for learners who want to master balanced meals, explore global cuisines, or refine
+          their plating and timing skills</p>
+        <ul class="list-1">
+          <li><a href="#">Skill Building</a></li>
+          <li><a href="#">Cultural Exploration</a></li>
+          <li><a href="#">Balanced Nutrition</a></li>
+          <li><a href="#">Presentation</a></li>
+        </ul>
+        <h3><span>Short</span>Courses</h3>
+        <p>Short cooking courses are brief, focused programs designed to teach specific culinary skills or themes in a
+          limited time. They’re perfect for beginners, food enthusiasts, or professionals looking to sharpen their
+          expertise.</p>
+        <ul class="list-1">
+          <li><a href="#">Duration</a></li>
+          <li><a href="#">Topics covered</a></li>
+          <li><a href="#">Hands on experience</a></li>
+          <li><a href="#">Flexible format </a></li>
+          <li><a href="#">accessible to all</a></li>          
+        </ul>
+      </article>
+      <article class="grid_8">
+        <h3>Short Courses</h3>
+        <p>Short cooking courses are compact, skill-focused programs designed to teach specific culinary techniques or
+          cuisines in a limited time. They are ideal for beginners, hobbyists, or professionals seeking quick
+          upskilling.</p>        
+        <div class="padd-1">
+          <h3>Our Teachers</h3>
+        </div>
+        <ul class="list-teachers">
+          <li>
+            <figure class="box-img"><img src="/static/images/page5-img4.jpg" alt=""></figure>
+            <div class="overflow">
+              <h4>Ekta D'Souza</h4>
+              <p>Ekta brings a rich blend of culinary expertise and teaching passion to our kitchen. With 10 years of
+                experience in Vegan Foods, they’ve worked in UK and are known for their Dishes.
+              </p>
+            </div>
+            <div class="clear"></div>
+          </li>
+          <li>
+            <figure class="box-img"><img src="/static/images/page5-img3.jpg" alt=""></figure>
+            <div class="overflow">
+              <h4>Sam Raj Pitroda</h4>
+              <p>Sam raj brings a rich blend of culinary expertise and teaching passion to our kitchen. With 20+ years
+                of
+                experience in Indian Regional Foods, they’ve worked in Farmlore(Banglore) and are known for their Foods
+                Variety.</p>
+            </div>
+            <div class="clear"></div>
+          </li>
+          <li>
+            <figure class="box-img"><img src="/static/images/page5-img2.jpg" alt=""></figure>
+            <div class="overflow">
+              <h4>Youkesh Saili</h4>
+              <p>Youkesh Saili brings a rich blend of culinary expertise and teaching passion to our kitchen. With 15+
+                years of
+                experience in Indian Regional Foods, they’ve worked in different countries & Restaurant also known for
+                their Foods Variety.</p>
+            </div>
+            <div class="clear"></div>
+          </li>
+        </ul>
+      </article>
+      <div class="clear"></div>
+    </div>
+  </section>
+  <footer>
+    <div class="main">
+      
+      <div class="policy">Design by: <a href="#">Hardik savani</a> </div>
+      <div class="clear"></div>
+    </div>
+  </footer>
+</body>
+
+</html>

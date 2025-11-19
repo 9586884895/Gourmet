@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Gourmet Cooking School | Recipes</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/static/css/reset.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="/static/css/grid.css" type="text/css" media="screen">
+  <link rel="icon" href="/static/images/favicon.icon" type="image/x-icon">
+  <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif+Caption:400,400italic" rel="stylesheet" type="text/css">
+  <script src="/static/js/jquery-1.7.1.min.js"></script>
+  <script src="/static/js/superfish.js"></script>
+  <!--[if lt IE 9]>
+<script src="/static/js/html5./static/js"></script>
+<link rel="stylesheet" href="/static/css/ie./static/css"> 
+<link href="http://fonts.googleapis.com//static/css?family=PT+Serif+Caption:400" rel="stylesheet" type="text//static/css">
+<link href="http://fonts.googleapis.com//static/css?family=PT+Serif+Caption:400italic" rel="stylesheet" type="text//static/css">
+<![endif]-->
+</head>
+
+<body>
+  <header>
+    <div class="line-top"></div>
+    <div class="main">
+      <div class="row-top">
+        <h1><a href="index.html"><img alt="" src="/static/images/logo.png"></a></h1>
+        <nav>
+          <ul class="sf-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/courses">Courses</a> </li>
+            <li class="active"><a href="/recipes">Recipes</a>
+              <ul>
+                <li><a href="/vegan">vegan</a></li>
+                <li><a href="/grill">Grill</a>
+                <li><a href="/desert">Desert</a></li>
+                <li><a href="/receipeoth">Other Receipes</a></li>
+              </ul>
+            </li>
+            <li><a href="/chefs">About</a> </li>
+            <li><a href="/mycontact">Contacts</a> </li>
+            {% if user is none %}
+            <li><a href="/login">Login</a> </li>
+            <li><a href="/usignup">signup</a> </li>
+            {% else %}
+            <li><a href="#">{{user}}</a>
+              <ul>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/note">Receipe-Submit</a></li>
+                <li><a href="/userlogout">Logout</a>
+                
+              </ul>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </header>
+  <section id="content">
+    <div class="border-horiz"></div>
+    <div class="container_12">
+      <article class="side-bar extra">
+        <h3><strong>3</strong> Steps <em>To become<br>
+            a perfect cook</em> </h3>
+        <ul class="list-dropcap1">
+          <li>
+            <div class="wrapper">
+              <div class="dropcap">1</div>
+              <h4>Enter our <br>
+                school</h4>
+            </div>
+            <p>Welcome to a place where learning feels like home.</p>
+            <a href="/school/" class="btn">Read more</a>
+          </li>
+          <li>
+            <div class="wrapper">
+              <div class="dropcap">2</div>
+              <h4>Education
+                Courses</h4>
+            </div>
+            <p>To develop knowledge, skills, and critical thinking across various academic and professional fields</p>
+            <a href="/courses/" class="btn">Read more</a>
+          </li>
+          <li>
+            <div class="wrapper">
+              <div class="dropcap">3</div>
+              <h4>Practical
+                Training</h4>
+            </div>
+            <p>Equip learners with practical culinary skills, focusing on vegetarian and eco-friendly cooking.</p>
+            <a href="/training/" class="btn">Read more</a>
+          </li>
+        </ul>
+      </article>
+      <article class="grid_8">
+        <h3>New Recipes</h3>
+        <ul class="list-recipes">
+          <li>
+            <figure class="box-img"><img src="/static/images/page3-img1.jpg" height="230" width="230" alt=""></figure>
+            <div class="overflow">
+              <a href="https://www.youtube.com/watch?v=APhvsabPZHE"><h4>Blue lagoon Mojito</h4></a>
+              <p>1 oz fresh lime juice,
+                1/2 to 1 oz blue curacao (liqueur or non-alcoholic syrup),
+                1 oz simple syrup (adjust to taste, or use 2 tsp sugar),
+                6-8 fresh mint leaves, plus a sprig for garnish,
+                Club soda or sparkling water to top,
+                Crushed ice,
+                Lime wedge or wheel for garnish.</p>
+            </div>
+            <div class="clear"></div>
+          </li>
+          <li>
+            <figure class="box-img"><img src="/static/images/page3-img2.jpg" height="230" width="230" alt=""></figure>
+            <div class="overflow">
+              <a href="https://www.youtube.com/watch?v=7d8c_-L_Sdo"><h4>Deserts</h4></a>
+              <p>1 can sweetened condensed milk (14 ounces / ~400 grams),
+                2 cups heavy whipping cream,
+                chilled 2 teaspoons vanilla extract,
+                Large mixing bowl,
+                Electric mixer (hand or stand),
+                Freezer-safe container,
+                Cling wrap or parchment paper.</p>
+            </div>
+            <div class="clear"></div>
+          </li>
+          <li>
+            <figure class="box-img"><img src="/static/images/page3-img3.jpg" height="230" width="230" alt=""></figure>
+            <div class="overflow">
+              <a href="https://www.youtube.com/watch?v=Ztgv-5CNZ9U"><h4>Bread pakora</h4></a>
+              <p>Bread pakora also known as bread pakoda, are a popular North Indian breakfast & tea-time snack made
+                with bread slices, potatoes, spices, gram flour and herbs. Bread pakora is not a common thing in Indian
+                homes but are quite popular on the streets of India, mainly in Mumbai.</p>
+            </div>
+            <div class="clear"></div>
+          </li>
+        </ul>
+      </article>
+      <div class="clear"></div>
+    </div>
+  </section>
+  <footer>
+    <div class="main">
+      
+      <div class="policy">Design by: <a href="#">Hardik savani</a> </div>
+      <div class="clear"></div>
+    </div>
+  </footer>
+</body>
+
+</html>
